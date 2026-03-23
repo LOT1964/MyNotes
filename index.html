@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Name Breslin</title>
+  <title>My Pages</title>
   <meta name="robots" content="noindex, nofollow" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     :root {
       --ink:    #1c1a17;
@@ -15,241 +15,120 @@
       --faint:  #e6ddd0;
       --mid:    #7a6040;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       background: var(--paper);
       color: var(--ink);
       font-family: 'Source Sans 3', sans-serif;
       font-weight: 300;
-      font-size: 1.08rem;
-      line-height: 1.85;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-    }
-
     .page {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 3.5rem 2rem 6rem;
-    }
-
-    header {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid var(--rule);
+      max-width: 500px;
+      width: 100%;
+      padding: 3rem 2rem;
       animation: fadeUp 0.7s ease both;
     }
-
+    header {
+      text-align: center;
+      margin-bottom: 2.8rem;
+      padding-bottom: 1.8rem;
+      border-bottom: 2px solid var(--rule);
+    }
     header .kicker {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--mid);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
-
     header h1 {
       font-family: 'Lora', serif;
-      font-size: 2.6rem;
+      font-size: 2.2rem;
       font-weight: 600;
       color: var(--accent);
-      line-height: 1.15;
-      letter-spacing: -0.01em;
     }
-
-    header .tagline {
-      margin-top: 0.7rem;
-      font-style: italic;
-      font-family: 'Lora', serif;
-      color: var(--mid);
-      font-size: 1rem;
-    }
-
-    .intro {
-      margin-bottom: 2.8rem;
+    .menu { display: flex; flex-direction: column; gap: 1rem; }
+    .menu a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.4rem;
+      border: 1px solid var(--faint);
+      background: white;
+      text-decoration: none;
       color: var(--ink);
-      animation: fadeUp 0.7s ease 0.1s both;
-    }
-
-    .section {
-      margin-bottom: 2.6rem;
-      padding-bottom: 2.4rem;
-      border-bottom: 1px solid var(--faint);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
       animation: fadeUp 0.6s ease both;
     }
-    .section:last-of-type { border-bottom: none; }
-
-    .section:nth-child(1) { animation-delay: 0.15s; }
-    .section:nth-child(2) { animation-delay: 0.22s; }
-    .section:nth-child(3) { animation-delay: 0.29s; }
-    .section:nth-child(4) { animation-delay: 0.36s; }
-    .section:nth-child(5) { animation-delay: 0.43s; }
-
-    .section h2 {
+    .menu a:nth-child(1) { animation-delay: 0.15s; }
+    .menu a:nth-child(2) { animation-delay: 0.25s; }
+    .menu a:nth-child(3) { animation-delay: 0.35s; }
+    .menu a:hover {
+      border-color: var(--rule);
+      box-shadow: 0 4px 16px rgba(92,61,30,0.08);
+      transform: translateY(-2px);
+    }
+    .menu a .icon { font-size: 1.5rem; flex-shrink: 0; }
+    .menu a .text .title {
       font-family: 'Lora', serif;
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--accent);
-      margin-bottom: 0.9rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--faint);
+      display: block;
     }
-
-    .section p {
-      margin-bottom: 0.9rem;
-    }
-    .section p:last-child { margin-bottom: 0; }
-
-    blockquote {
-      margin: 1.2rem 0;
-      padding: 1rem 1.4rem;
-      border-left: 3px solid var(--rule);
-      background: rgba(194,169,122,0.08);
-      font-family: 'Lora', serif;
-      font-style: italic;
+    .menu a .text .desc {
+      font-size: 0.88rem;
       color: var(--mid);
-      font-size: 0.98rem;
-      line-height: 1.75;
+      margin-top: 0.1rem;
     }
-
-    .summary {
-      margin-top: 3rem;
-      padding: 1.6rem 1.8rem;
-      border: 1px solid var(--rule);
-      background: rgba(194,169,122,0.1);
-      animation: fadeUp 0.6s ease 0.6s both;
-    }
-
-    .summary h2 {
-      font-family: 'Lora', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
     footer {
-      margin-top: 4rem;
+      margin-top: 3rem;
       text-align: center;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--rule);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
-
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
+      from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 520px) {
-      .page { padding: 2rem 1.2rem 4rem; }
-      header h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
 <div class="page">
-
   <header>
-    <p class="kicker">Family Heritage</p>
-    <h1>The Name Breslin</h1>
-    <p class="tagline">Origins, Law, and Legacy — a history rooted in Gaelic Ireland</p>
+    <p class="kicker">Personal Reference</p>
+    <h1>My Pages</h1>
   </header>
-
-  <p class="intro">
-    The name Breslin carries a remarkably rich heritage rooted in some of the most important legal, spiritual, and tribal traditions of Gaelic Ireland.
-  </p>
-
-  <div class="section">
-    <h2>Gaelic Origins and Meaning</h2>
-    <p>
-      The name Breslin is of Irish Gaelic origin, derived from the surname Ó Breasláin, meaning "descendant of Breasláin." The personal name Breasláin is thought to come from the Irish word <em>bres</em>, meaning "battle," "strife," or "challenge," combined with the diminutive suffix <em>-lin</em>, suggesting a meaning related to a warrior or one who engages in struggle.
-    </p>
-    <p>
-      An alternative derivation is found in the Irish Pedigrees tradition: the name Brislann is interpreted from <em>bris</em> (Irish: to break) and <em>lann</em> (the blade of a sword), giving it a distinctly martial flavour.
-    </p>
-    <p>
-      The name has also been linked to qualities of intelligence, empathy, integrity, righteousness, and hope — reflecting the high status the family held over generations as legal and ecclesiastical figures. The prefix O' — as in O'Breslin — denotes "descendant of," a marker of Gaelic sept lineage. Although originally prefixed with "O", it is seldom found in this form in modern times.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Tribal and Territorial Roots</h2>
-    <p>
-      The sept of O'Breslin, a branch of the Cénel Enda, possessed a district in the barony of Kilmacrenan in Donegal called Fanad, where they were powerful chiefs, mentioned frequently in the Annals of the Four Masters.
-    </p>
-    <p>
-      The Cénel Enda was itself part of the great tribal confederation of the Northern Uí Néill, descended from Niall of the Nine Hostages. Legend holds that his sons Eoghan, Conall, and Enda moved into modern County Donegal in the 5th century, establishing themselves as lords in northwestern Ulster.
-    </p>
-    <p>
-      With the reduction of power of the Cénel Conaill, the territory of Fanad came under the control of the O'Breslins. There are records of Viking attacks on Fanad — specifically in Mulroy Bay at Kinnaweer near Milford in 921 AD. The power of the O'Breslins in Fanad lasted until sometime after 1263, when the O'Donnells granted the sub-chieftaincy of Fanad to the MacSweeneys in return for their support.
-    </p>
-    <p>
-      A second, smaller sept of the name also existed: a branch of the Hy Fiachrach, whose territory lay in Killanley, County Sligo.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>The Brehon Law Connection</h2>
-    <p>
-      Few names carry as direct a connection to the ancient Brehon legal tradition as Breslin. Among the chief Brehon families of Ireland were the O'Breslins of Donegal — Brehons to the O'Donnells and to the Maguires, lords of Fermanagh. The Brehon system was an ancient and sophisticated body of customary law that governed Gaelic Ireland for over a thousand years.
-    </p>
-    <p>
-      A remarkable historical account from the Tracts of Sir John Davis captures the O'Breslin Brehon in the final days of the Gaelic order:
-    </p>
-    <blockquote>
-      Sir John Davis, attorney-general to King James the First, having proceeded to Ulster around 1607, required to know the tenure by which Maguire held his lands. Having sent for the Brehon O'Breslin — described as a very feeble old man — he came to the camp. The judges demanded his Roll. He at first refused to show it, but at length, on the Lord Chancellor taking an oath that he would return it safe, the old Brehon drew the Roll out of his bosom and gave it to the chancellor.
-    </blockquote>
-    <p>
-      This poignant scene captures the twilight of a millennium-old legal tradition. In the sixteenth century, some of the leading Breslin families migrated to County Fermanagh, where they continued their profession as Brehons under the MacGuires.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>The Bell Keeper Connection — Erenaghs of Inishkeel</h2>
-    <p>
-      Perhaps the most haunting chapter in the Breslin story is their role as Erenaghs — hereditary custodians of sacred Church lands and relics. Around Inishkeel island, the local Erenagh family were the O'Breslins. This family kept the Bell of Conall safe for hundreds of years, passing it from generation to generation. It was on display for the hundreds of pilgrims who made their way to Inishkeel every year on the feast day of Saint Conall.
-    </p>
-    <p>
-      The Great Famine of the 1840s disrupted many such traditions. Around this time, the Bell of Conall left the hands of the Breslin family. It was first given to a local businessman, who then sold it to the British Museum in London, where it has remained ever since.
-    </p>
-    <p>
-      This dual role — as both legal authorities (Brehons) and spiritual guardians (Erenaghs) — made the O'Breslins uniquely important in Gaelic society.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Historical Significance and Decline</h2>
-    <p>
-      The end of the Gaelic order spelled the end of the O'Breslin's formal roles. Brehon Law was finally suppressed in the early 1600s following the Flight of the Earls in 1607 and the subsequent Plantation of Ulster. The sept survived, however, and is still well represented in Donegal in modern times.
-    </p>
-    <p>
-      One notable later figure was John J. Breslin (circa 1836–1888), the Fenian who effected the escape of James Stephens from Richmond Prison, of a County Tyrone family.
-    </p>
-  </div>
-
-  <div class="summary">
-    <h2>Summary</h2>
-    <p>
-      The Breslin name encapsulates layers of Irish identity rarely found so concentrated in a single surname: tribal chieftains of Fanad tracing descent from Niall of the Nine Hostages; hereditary Brehon lawyers serving two of Ulster's greatest dynasties; Erenaghs who guarded sacred relics including the ancient Bell of Saint Conall for a thousand years — and ultimately, a family whose story ends with that very bell sitting in a museum in London, carried away by the catastrophe of the Famine. It is, in its entirety, a microcosm of Irish history itself.
-    </p>
-  </div>
-
-  <footer>private · not indexed · personal reference</footer>
-
+  <nav class="menu">
+    <a href="breslin.html">
+      <span class="icon">📜</span>
+      <span class="text">
+        <span class="title">The Name Breslin</span>
+        <span class="desc">Origins, law, and legacy — Gaelic Ireland</span>
+      </span>
+    </a>
+    <a href="notes.html">
+      <span class="icon">📝</span>
+      <span class="text">
+        <span class="title">General Notes</span>
+        <span class="desc">Personal notes and reference information</span>
+      </span>
+    </a>
+    <a href="shopping.html">
+      <span class="icon">🛒</span>
+      <span class="text">
+        <span class="title">Shopping &amp; To-Do</span>
+        <span class="desc">Lists, errands, and reminders</span>
+      </span>
+    </a>
+  </nav>
+  <footer>private · not indexed</footer>
 </div>
 </body>
 </html>
