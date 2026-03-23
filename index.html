@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Notes</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:     #1a1a1a;
+      --paper:   #f5f0e8;
+      --accent:  #5c4a2a;
+      --rule:    #c8baa0;
+      --faint:   #e8e0d0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* subtle grain overlay */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 1.5rem;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    header h1 {
+      font-family: 'Lora', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+    }
+
+    header p.subtitle {
+      font-size: 0.9rem;
+      color: var(--rule);
+      margin-top: 0.25rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* --- sections --- */
+    .section {
+      margin-bottom: 2.8rem;
+      padding-bottom: 2.4rem;
+      border-bottom: 1px solid var(--faint);
+      animation: fadeUp 0.6s ease both;
+    }
+    .section:last-child { border-bottom: none; }
+
+    .section:nth-child(1) { animation-delay: 0.1s; }
+    .section:nth-child(2) { animation-delay: 0.2s; }
+    .section:nth-child(3) { animation-delay: 0.3s; }
+    .section:nth-child(4) { animation-delay: 0.4s; }
+    .section:nth-child(5) { animation-delay: 0.5s; }
+
+    .section h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section h2 .icon {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    .section p, .section li {
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .section ul li {
+      padding: 0.3rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--rule);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--rule);
+      margin-top: 4rem;
+      letter-spacing: 0.05em;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .page { padding: 2rem 1.2rem 4rem; }
+      header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <h1>My Notes</h1>
+      <p class="subtitle">Personal reference page</p>
+    </header>
+
+    <!-- ============================================================
+         SECTION 1 — Edit the heading and text below
+         ============================================================ -->
+    <div class="section">
+      <h2><span class="icon">📋</span> Section One</h2>
+      <p>
+        Replace this text with whatever you'd like Google Home to read out.
+        Keep sentences clear and natural — Google Home reads punctuation as pauses,
+        so a full stop at the end of each thought works best.
+      </p>
+    </div>
+
+    <!-- ============================================================
+         SECTION 2 — List example
+         ============================================================ -->
+    <div class="section">
+      <h2><span class="icon">🛒</span> Section Two</h2>
+      <ul>
+        <li>First item in your list</li>
+        <li>Second item in your list</li>
+        <li>Third item in your list</li>
+        <li>Add as many as you need</li>
+      </ul>
+    </div>
+
+    <!-- ============================================================
+         SECTION 3 — Another text block
+         ============================================================ -->
+    <div class="section">
+      <h2><span class="icon">📝</span> Section Three</h2>
+      <p>
+        Another section for notes, reminders, or anything you'd like
+        to keep handy. You can have as many or as few sections as you need.
+      </p>
+    </div>
+
+    <!-- ============================================================
+         SECTION 4 — Duplicate or remove as needed
+         ============================================================ -->
+    <div class="section">
+      <h2><span class="icon">💡</span> Section Four</h2>
+      <p>
+        To add a new section, copy one of these blocks and paste it below.
+        To remove a section, delete everything between the comment lines.
+      </p>
+    </div>
+
+    <footer>private · not indexed</footer>
+
+  </div>
+</body>
+</html>
